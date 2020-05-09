@@ -6,6 +6,8 @@ Summary:        Custom vault based scl (and rh) yum repositories
 License:        MIT
 Source0:        CentOS-Vault-SCLo-scl-rh.repo
 
+BuildArch:      noarch
+
 
 %description
 

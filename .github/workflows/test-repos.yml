@@ -53,5 +53,5 @@ jobs:
 
     - name: Install devtoolset-3 with vault
       run: |
-        yum install -y RPMS/*
+        yum install -y RPMS/noarch*
         yum install -y --skip-broken devtoolset-3
