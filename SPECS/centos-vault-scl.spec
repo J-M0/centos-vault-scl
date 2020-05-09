@@ -17,13 +17,13 @@ Requires:       centos-vault-scl-rh
 %prep
 
 %install
-install -D -m 644 %{SOURCE0} %{buildroot}%{_sysconfdir}/yum.repos.d/CentOS-SCLo-scl.repo
+install -D -m 644 %{SOURCE0} %{buildroot}%{_sysconfdir}/yum.repos.d/CentOS-Vault-SCLo-scl.repo
 
 
 
 %files
 %defattr(-,root,root)
-%config(noreplace) %{_sysconfdir}/yum.repos.d/*
+%config(noreplace) %{_sysconfdir}/yum.repos.d/CentOS-Vault-SCLo-scl.repo
 
 
 
