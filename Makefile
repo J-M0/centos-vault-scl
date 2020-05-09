@@ -1,7 +1,12 @@
-SPECS=SPECS/*
+.PHONY: all
+all: SOURCES RPMS
 
-all:
-	rpmbuild --define "_topdir $(PWD)" -bb $(SPECS)
-
+.PHONY: clean
 clean:
-	rm -r BUILD BUILDROOT RPMS SRPMS
+	rm -r BUILD BUILDROOT RPMS SOURCES SRPMS
+
+SOURCES:
+	bash template-to-repos.sh
+
+RPMS: SOURCES
+	rpmbuild --define "_topdir $(PWD)" -bb SPECS/*
