@@ -9,7 +9,7 @@ jobs:
 
     steps:
     - name: Install rpmbuild
-      run: yum -y install rpmbuild
+      run: yum -y install rpm-build
 
     - name: Run rpmbuild
       run: make
