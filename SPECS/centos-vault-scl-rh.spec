@@ -1,7 +1,7 @@
 Name:           centos-vault-scl-rh
 Version:        0.2
 Release:        1%{?dist}
-Summary:        Custom vault based scl (and rh) yum repositories
+Summary:        Software collections from the CentOS SCLo SIG vault (upstream scl only)
 
 License:        MIT
 Source0:        CentOS-Vault-SCLo-scl-rh.repo
@@ -11,7 +11,7 @@ BuildArch:      noarch
 Requires:       centos-release-scl-rh
 
 %description
-
+yum Configs for removed Software Collections as delivered via the CentOS SCLo SIG.
 
 %prep
 
