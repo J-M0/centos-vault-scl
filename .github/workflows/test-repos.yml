@@ -16,6 +16,7 @@ jobs:
     
     - name: Upload artifacts
       uses: actions/upload-artifact@v2
+      with:
         name: rpms
         path: RPMS/
 
@@ -43,9 +44,9 @@ jobs:
 
     - name: Download RPMS
       uses: actions/download-artifact@v2
-        with:
-          name: rpms
-          path: RPMS/
+      with:
+        name: rpms
+        path: RPMS/
 
     - name: Install devtoolset-3 with vault
       run: |
