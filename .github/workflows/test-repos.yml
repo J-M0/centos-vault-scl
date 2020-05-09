@@ -54,4 +54,5 @@ jobs:
     - name: Install devtoolset-3 with vault
       run: |
         yum install -y RPMS/noarch/*
+        yum-config-manager --enable C${{ matrix.centos-version }}-centos-sclo-{sclo,rh}
         yum install -y --skip-broken devtoolset-3
