@@ -9,8 +9,8 @@ jobs:
 
     steps:
     - name: Checkout
-      uses: actions/checkout@2
-      
+      uses: actions/checkout@v2
+
     - name: Install rpmbuild
       run: yum -y install rpm-build make
 
