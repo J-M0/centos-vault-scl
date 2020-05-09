@@ -40,10 +40,10 @@ jobs:
         ]
 
     steps:
-    - name: Fail install devtoolset-3 without vault
+    - name: Fail check for devtoolset-3 without vault
       run: |
         yum install -y centos-release-scl
-        yum install -y devtoolset-3 && exit 1 || exit 0
+        yum info devtoolset-3 && exit 1 || exit 0
 
     - name: Download RPMS
       uses: actions/download-artifact@v2
@@ -51,8 +51,8 @@ jobs:
         name: rpms
         path: RPMS/
 
-    - name: Install devtoolset-3 with vault
+    - name: Check for devtoolset-3 with vault
       run: |
-        yum install -y RPMS/noarch/*
+        yum install -y yum-utils RPMS/noarch/*
         yum-config-manager --enable C${{ matrix.centos-version }}-centos-sclo-{sclo,rh}
-        yum install -y --skip-broken devtoolset-3
+        yum info devtoolset-3
