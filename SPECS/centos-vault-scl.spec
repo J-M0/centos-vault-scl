@@ -1,11 +1,12 @@
 Name:           centos-vault-scl
-Version:        
+Version:        0.2
 Release:        1%{?dist}
-Summary:        
+Summary:        Custom vault based scl (and rh) yum repositories
 
 License:        MIT    
-Source0:        CenOS-Vault-SCLo-scl.repo
+Source0:        CentOS-Vault-SCLo-scl.repo
 
+Requires:       centos-release-scl
 Requires:       centos-vault-scl-rh
 
 %description
@@ -14,11 +15,13 @@ Requires:       centos-vault-scl-rh
 %prep
 
 %install
+install -D -m 644 %{SOURCE0} %{buildroot}%{_sysconfdir}/yum.repos.d/CentOS-SCLo-scl.repo
 
 
 
 %files
-%doc
+%defattr(-,root,root)
+%config(noreplace) %{_sysconfdir}/yum.repos.d/*
 
 
 
