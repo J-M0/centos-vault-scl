@@ -8,6 +8,7 @@ Source0:        CentOS-Vault-SCLo-scl-rh.repo
 
 BuildArch:      noarch
 
+Requires:       centos-release-scl-rh
 
 %description
 
@@ -15,11 +16,12 @@ BuildArch:      noarch
 %prep
 
 %install
+install -D -m 644 %{SOURCE0} %{buildroot}%{_sysconfdir}/yum.repos.d/CentOS-Vault-SCLo-scl-rh.repo
 
 
 %files
-%doc
-
+%defattr(-,root,root)
+%config(noreplace) %{_sysconfdir}/yum.repos.d/CentOS-Vault-SCLo-scl-rh.repo
 
 
 %changelog
